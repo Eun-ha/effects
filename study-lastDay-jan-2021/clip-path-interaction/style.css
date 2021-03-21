@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: aquamarine;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 30%;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+
+
+.container .inner{
+  background-color: thistle;
+  padding: 1em;
+  border-radius: 10px;
+  width: 250px;
+  clip-path: circle(10% at 90% 15%);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+
+}
+
+.container .inner:hover{
+  clip-path: circle(75%);
+  background-color: red;
+}
+
+
+span{
+  float: right;
+  color: white;
+  font-weight: bold;
+  transition: color .5s;
+  position: relative;
+  margin-right: 4%;
+}
+
+.container .inner:hover span {
+  color: red;
+}
+
+
+.container .inner h1{
+  color: white;
+  
+}
+
+.container .inner p{
+  color: white;
+  font-size: .8rem;
+}

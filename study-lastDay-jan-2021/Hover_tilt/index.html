@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover_tilt</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="imgBX"></div>
+      <div class="contentBx">
+        <h2>Tilt box hover effects</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto totam similique amet eos perspiciatis quaerat quae incidunt fugiat non impedit.
+        </p>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBX"></div>
+      <div class="contentBx">
+        <h2>Tilt box hover effects</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto totam similique amet eos perspiciatis quaerat quae incidunt fugiat non impedit.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="vanilla-tilt.js"></script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.querySelectorAll(".box"),{
+      max: 25,
+      speed: 800
+    });
+  </script>
+  
+</body>
+</html>

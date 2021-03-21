@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css"/>
+  <title>Document</title>
+</head>
+<body>
+  
+  <header>
+    <nav>
+      <h3 id="logo">Dream Vacation</h3>
+      <img class="hamburger" src="" alt="">
+    </nav>
+    <section>
+      <div class="hero">
+        <img src="test.jpeg"/>
+        <h1 class="headline">Dream Big</h1>
+      </div>
+    </section>
+  </header>
+
+  <div class="slider"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+  <script>
+    const hero = document.querySelector('.hero');
+    const slider = document.querySelector('.slider');
+    const logo = document.querySelector('#logo');
+    const hamburger = document.querySelector('.hamburger');
+    const headline = document.querySelector('.headline');
+
+    const tl = new TimelineMax();
+
+    tl.fromTo(hero, 1, {height: "0%"}, {height: '80%', ease: Power2.easeInOut})
+    .fromTo(hero, 1.2, {width: '100%'},{width: '80%', ease: Power2.easeInOut})
+    .fromTo(slider, 1.2, {x: "-100%"}, {x: "0%", ease:Power2.easeInOut}, "-=1.2")
+    .fromTo(logo, 0.5, {opacity: 0, x:30}, {opacity: 1, x:0}, "-=0.5")
+    .fromTo(hamburger, 0.5, {opacity: 0, x:30}, {opacity: 1, x:0}, "-=0.5")
+    .fromTo(headline, 0.5, {opacity: 0, x:50}, {opacity: 1, x:0}, "-=0.5")
+  </script>
+  
+</body>
+</html>

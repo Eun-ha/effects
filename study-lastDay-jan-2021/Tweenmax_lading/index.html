@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tweenmax_landing_page</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <h1>Engineering For Tomorrow</h1>
+  <button id="cta">watch here</button>
+
+  <div class="panel">
+    <img id="light" src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTI1MDkzMjc2OTQzNDIyNzM4/poeportrait-600x487jpg.jpg" />
+    <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="box"></div>
+  </div>
+  <!--
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+  -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+
+  <script>
+    
+    const tl = new TimelineMax();
+
+    const panel = document.querySelector('.panel');
+    const light = document.querySelector('#light');
+    const txt = document.querySelector('.txt');
+    const box = document.querySelector('.box');
+
+
+    document.getElementById('cta').addEventListener('click', function(){
+      
+      tl.to('.panel', 1.5, {scaleY: 1, height: '100vh', ease: 'circ.out'})
+      .to('#light', 1, {opacity: 1, y:0, ease: 'back.out(1.7)', delay:1})
+      .to('.txt', 1, {opacity: 1, y: 20, delay: 1.4})
+      .to('.box', 3, {opacity:1, ease: 'elastic.out(1, 0.3)', scale:1})
+
+      /*
+      TweenMax.to('.panel', 1.5, {scaleY: 1, height: '100vh', ease: 'circ.out'});
+      TweenMax.to('#light', 1, {opacity: 1, y:0, ease: 'back.out(1.7)', delay:1});
+      TweenMax.to('.txt', 1, {opacity: 1, y: 20, delay: 1.4});
+      TweenMax.to('.box', 3, {opacity:1, ease: 'elastic.out(1, 0.3)', scale:1})
+      */
+
+    })
+
+  </script>
+
+
+</body>
+</html>

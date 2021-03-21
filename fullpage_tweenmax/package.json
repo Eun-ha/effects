@@ -1,0 +1,15 @@
+{
+  "name": "fullpage_tweenmax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "home.js",
+  "scripts": {
+    "dev": "node-sass styles/styles.scss css/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fullpage.js": "^3.1.0",
+    "node-sass": "^5.0.0"
+  }
+}

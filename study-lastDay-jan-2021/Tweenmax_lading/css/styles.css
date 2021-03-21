@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  padding: 9em; }
+
+h1 {
+  font-size: 5em;
+  width: 25%;
+  color: red;
+  line-height: 1em; }
+
+button {
+  background: none;
+  border: 1px solid black;
+  font-size: 1.7em;
+  font-weight: bold;
+  padding: .5em 1em;
+  cursor: pointer; }
+
+.panel {
+  position: absolute;
+  width: 55%;
+  bottom: 0;
+  right: 0;
+  background: #eaeaea;
+  padding: 15% 7%;
+  transform: scaleY(0);
+  transform-origin: bottom; }
+  .panel img {
+    width: 120px;
+    float: left;
+    margin-right: 50px;
+    opacity: 0;
+    transform: translateY(-200px); }
+  .panel p {
+    font-size: 1.9em;
+    width: 80%;
+    opacity: 0; }
+  .panel .box {
+    border: 5px solid lightgray;
+    width: 65%;
+    height: 40%;
+    position: absolute;
+    left: -7%;
+    top: 15%;
+    opacity: 0;
+    transform: scaleY(0); }

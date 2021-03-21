@@ -1,0 +1,24 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+.landing{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 50px;
+}
+.distortion{
+  width: 640px;
+  height: 920px;
+}
+
+.intro{
+  align-self: center;
+}
+
+.intro h2{
+  font-size: 50px;
+}
+
+.intro p{
+  font-size: 25px;
+}

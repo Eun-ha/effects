@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+  <title>fullpage_tweenmax</title>
+</head>
+<body>
+  <div id="fullpage">
+    <div class="section first" >
+      <div id="bg"></div>
+      <div id="title">첫번째 타이틀</div>
+      <div id="crown"></div>
+      <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+    <div class="section second" >
+      <div id="bg"></div>
+      <div id="title">두번째 타이틀</div>
+      <div id="crown"></div>
+      <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+    <div class="section third" >
+      <div id="bg"></div>
+      <div id="title">세번째 타이틀</div>
+      <div id="crown"></div>
+      <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+    <div class="section fourth" >
+      <div id="bg"></div>
+      <div id="title">네번째 타이틀</div>
+      <div id="crown"></div>
+      <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="fullpage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+
+  <script>
+
+    const target = document.querySelectorAll('.section');
+
+    const crown = document.querySelectorAll('#crown');
+    const title = document.querySelectorAll('#title');
+    const list = document.querySelectorAll('#list');
+    
+    const tl = new TimelineMax();
+
+    var myFullpage = new fullpage('#fullpage', {
+    //Navigation
+    menu: '#menu',
+    lockAnchors: true,
+    anchors:['slide1', 'slide2','slide3','slide4'],
+    navigation: true,
+    navigationPosition: 'right',
+    navigationTooltips: ['firstSlide', 'secondSlide','thirdSlide', 'fourthSlide',],
+    showActiveTooltip: true,
+    slidesNavigation: true,
+    slidesNavPosition: 'bottom',
+
+    //Scrolling
+    css3: true,
+    scrollingSpeed: 700,
+    autoScrolling: true,
+    fitToSection: true,
+    fitToSectionDelay: 1000,
+    scrollBar: false,
+    easing: 'easeInOutCubic',
+    easingcss3: 'ease',
+    loopBottom: false,
+    loopTop: false,
+    loopHorizontal: true,
+    continuousVertical: false,
+    continuousHorizontal: false,
+    scrollHorizontally: false,
+    interlockedSlides: false,
+    dragAndMove: false,
+    offsetSections: false,
+    resetSliders: false,
+    fadingEffect: false,
+    normalScrollElements: '#element1, .element2',
+    scrollOverflow: false,
+    scrollOverflowReset: false,
+    scrollOverflowOptions: null,
+    touchSensitivity: 15,
+    bigSectionsDestination: null,
+
+    //Accessibility
+    keyboardScrolling: true,
+    animateAnchor: true,
+    recordHistory: true,
+
+    //Design
+    controlArrows: true,
+    verticalCentered: true,
+    sectionsColor : ['#ccc', '#fff','#ccc','#fff'],
+    paddingTop: '3em',
+    paddingBottom: '10px',
+    fixedElements: '#header, .footer',
+    responsiveWidth: 0,
+    responsiveHeight: 0,
+    responsiveSlides: false,
+    parallax: false,
+    parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+    dropEffect: false,
+    dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
+    cards: false,
+    cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+
+    //Custom selectors
+    sectionSelector: '.section',
+    slideSelector: '.slide',
+
+    lazyLoading: true,
+
+    //events
+    onLeave: function(origin, destination, direction){
+
+      const staggerTart = list[destination.index].children;
+
+      target.forEach(element => 
+        element.childNodes[0].childNodes[1].style=""
+      )
+
+      title.forEach(element => 
+        element.style=""
+      )
+
+      crown.forEach(element => 
+        element.style=""
+      )
+
+      Array.from(staggerTart).map(node => 
+       node.style=""
+      )
+
+
+      
+
+
+    },
+    afterLoad: function(origin, destination, direction){
+      
+      
+      const bg = target[destination.index].childNodes[0].firstChild.nextSibling;
+      const staggerTart = list[destination.index].children;
+      bg.style.transform = "scale(1)"; 
+      bg.style.transition = "transform 2s ease"; 
+
+      tl.fromTo(title[destination.index], 0.5, {opacity: 0, y: -20}, {opacity: 1, y:0})
+      .fromTo(crown[destination.index], 0.9, {opacity: 0, y: -20}, {opacity: 1, y:0})
+      .staggerTo(staggerTart, 0.5, {opacity:1, y:-20}, 0.5);
+
+      console.log(staggerTart);
+      console.log(crown);
+
+      
+
+    },
+    afterRender: function(){
+      
+
+      
+    },
+    afterResize: function(width, height){},
+    afterReBuild: function(){},
+    afterResponsive: function(isResponsive){},
+    afterSlideLoad: function(section, origin, destination, direction){
+      
+    },
+    onSlideLeave: function(section, origin, destination, direction){
+      
+    }
+  });
+
+    /*
+    const hero = document.querySelector('.hero');
+    const slider = document.querySelector('.slider');
+    const logo = document.querySelector('#logo');
+    const hamburger = document.querySelector('.hamburger');
+    const headline = document.querySelector('.headline');
+    */
+
+    /*
+    const crown = document.querySelector('.crown');
+
+    const tl = new TimelineMax();
+
+    tl.fromTo(crown, 1, {height: "0%"}, {height: '80%', ease: Power2.easeInOut})
+    .fromTo(crown, 1.2, {width: '100%'},{width: '80%', ease: Power2.easeInOut})
+    */
+
+    /*
+    tl.fromTo(hero, 1, {height: "0%"}, {height: '80%', ease: Power2.easeInOut})
+    .fromTo(hero, 1.2, {width: '100%'},{width: '80%', ease: Power2.easeInOut})
+    .fromTo(slider, 1.2, {x: "-100%"}, {x: "0%", ease:Power2.easeInOut}, "-=1.2")
+    .fromTo(logo, 0.5, {opacity: 0, x:30}, {opacity: 1, x:0}, "-=0.5")
+    .fromTo(hamburger, 0.5, {opacity: 0, x:30}, {opacity: 1, x:0}, "-=0.5")
+    .fromTo(headline, 0.5, {opacity: 0, x:50}, {opacity: 1, x:0}, "-=0.5")
+  */
+  </script>
+  
+</body>
+</html>

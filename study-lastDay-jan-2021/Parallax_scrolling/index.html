@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <title>Document</title>
+</head>
+<body>
+  <section class="zoom">
+    <img id="layer1" src="mountain1.png" alt="">
+    <img id="layer2" src="mountain2.png" alt="">
+    <img id="text" src="text.png" alt="">
+  </section>
+  <section class="content">
+    <h1>this is title</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis qui perferendis quae! Beatae harum id distinctio tempore officiis dolores mollitia esse, veniam iste, eius nobis ea minus? Est magni dignissimos magnam, officia soluta, debitis culpa minima nostrum, cupiditate natus molestias vero aut eligendi facilis itaque? Itaque cupiditate unde nulla voluptas optio odit et quasi exercitationem atque voluptatum molestias quis provident, cumque, libero, soluta vero omnis possimus inventore explicabo voluptatibus vel in illo perferendis repellat. Corrupti reprehenderit porro laboriosam obcaecati, exercitationem impedit voluptates ratione dolor consequuntur possimus atque velit inventore cupiditate et vel, accusamus nulla distinctio incidunt! Minima temporibus omnis eaque amet ab voluptatum dolor molestiae dignissimos quod dolores minus autem provident optio tenetur, nemo doloribus labore natus voluptatibus officiis quia itaque atque? Optio ea voluptates autem, voluptatum ab vero fuga adipisci eum est architecto delectus dolore libero totam? Recusandae voluptatem ad blanditiis, temporibus amet corrupti tenetur vitae, delectus sed illum asperiores, aliquid dignissimos sapiente perferendis aperiam porro obcaecati atque labore ullam ut hic eos. Eligendi odio molestias ducimus placeat dolorum quaerat libero id, eveniet eos officiis blanditiis. Possimus neque, illum necessitatibus autem ut molestiae ex natus obcaecati. Aperiam consequuntur, doloribus architecto veritatis minus perspiciatis culpa nemo dolor porro earum pariatur mollitia harum quia. Corporis sunt quisquam quis possimus voluptatem aliquid voluptatum harum cumque dignissimos. Voluptate alias officiis nesciunt eaque sed? Facilis a error dolorem non, quis perferendis alias odio eius excepturi esse porro, sapiente ullam aliquid totam nam maxime voluptatibus assumenda deserunt recusandae quibusdam distinctio. Quos nulla corrupti veniam excepturi. Officiis consequatur, alias pariatur quibusdam, aspernatur illo doloribus magnam, rem non saepe distinctio amet perferendis aut ex voluptatibus quia vel quaerat quidem! Eius, voluptatibus cupiditate. Consectetur minima saepe autem totam sequi, voluptas illo, delectus, iusto voluptatem accusantium provident dolore eum ipsum? Eaque sunt, vel a libero magni id. Odio praesentium expedita eos facilis minima dolorum, velit quas perspiciatis vero corrupti ad sed debitis modi nesciunt vel iusto similique! Expedita accusantium, cumque ad sunt aut tempore dignissimos itaque nisi beatae minima officiis voluptatem nemo laboriosam pariatur est repellendus, consequuntur quia adipisci voluptatibus minus? Et dicta ipsum ipsa saepe necessitatibus recusandae totam molestias perferendis nihil, cumque odio! Eaque, saepe distinctio. Dolor expedita debitis quia consectetur commodi error doloribus, cum hic, reiciendis modi nulla. Dicta necessitatibus enim quis blanditiis perferendis facere consectetur sunt, harum voluptatibus sapiente placeat, reprehenderit quaerat cumque facilis animi magnam iste quo saepe voluptate et sequi nulla! Suscipit neque ipsum totam obcaecati hic? Eligendi, adipisci asperiores doloribus esse ex ut. Voluptate, officia tenetur doloribus id animi voluptas repellendus unde soluta esse libero temporibus tempora eum suscipit, qui culpa cumque autem incidunt! Beatae iure esse, accusamus dolorum debitis magni reprehenderit unde assumenda, mollitia laborum qui reiciendis alias porro obcaecati sit. Vero nobis cupiditate magnam! Deleniti nisi quos fuga animi repudiandae quisquam veniam blanditiis totam unde delectus rem velit, itaque tenetur, sint, facilis aut ea ducimus. Cupiditate earum officiis voluptatum iste nesciunt, hic amet maiores doloremque recusandae aperiam eligendi ab iusto nihil saepe? Suscipit magni ea dolorem iusto, consequuntur odio recusandae accusantium!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt possimus aperiam minima, placeat tempore fugit nemo suscipit ipsa quos quibusdam! Eius, provident distinctio ullam officiis ex ab dignissimos delectus ratione.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, provident eos! Veritatis praesentium distinctio vero maiores, optio modi omnis. Illo quas reprehenderit nesciunt accusamus unde quibusdam perspiciatis impedit quisquam tenetur.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, perferendis labore saepe sequi assumenda praesentium nihil ullam ea nobis sunt, vitae quisquam qui dignissimos impedit incidunt eaque culpa reiciendis voluptatum.</p>
+  </section>
+
+  <script>
+    const layer1 = document.getElementById('layer1')
+    scroll = window.pageYOffset;
+    document.addEventListener('scroll', function(e){
+        const offset = window.pageYOffset;
+        scroll = offset;
+        layer1.style.width = (100 + scroll/5) + '%';
+    })
+    const layer2 = document.getElementById('layer2')
+    scroll = window.pageYOffset;
+    document.addEventListener('scroll', function(e){
+        const offset = window.pageYOffset;
+        scroll = offset;
+        layer2.style.width = (100 + scroll/5) + '%';
+        layer2.style.left = scroll/5 + '%';
+    })
+    const text = document.getElementById('text')
+    scroll = window.pageYOffset;
+    document.addEventListener('scroll', function(e){
+        const offset = window.pageYOffset;
+        scroll = offset;
+        text.style.top = - scroll/20 + '%';
+    })
+    
+    
+    
+  </script>
+</body>
+</html>
